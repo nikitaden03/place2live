@@ -42,8 +42,8 @@ your_purchasing_power_index = float(
 )
 print(f"In your country purchasing power index is {your_purchasing_power_index}")
 your_purchasing_power_index = (
-    float(input("What is your purchasing power index (higher is better)? The best score in the world is {}({}), the worst is {}({} )".format(
-        max_min_purchasing_power_index[0][0],*max_min_purchasing_power_index[0][1],max_min_purchasing_power_index[1][0], 
+    float(input("What is your purchasing power index (higher is better)? The best score in the world is {}({}), the worst is {}({}) ".format(
+        max_min_purchasing_power_index[0][0],*max_min_purchasing_power_index[0][1], max_min_purchasing_power_index[1][0], 
         max_min_purchasing_power_index[1][1])))
     or your_purchasing_power_index
 )
@@ -60,7 +60,7 @@ your_health_care_index = float(df[df.country == your_country]["health_care_index
 print(f"In your country health care index is {your_health_care_index}")
 your_health_care_index = (
     float(input("What is your health care index (higher is better)? The best score in the world is {}({}), the worst is {}({}) ".format(
-        max_min_health_care_index[0][0],*max_min_health_care_index[0][1],max_min_health_care_index[1][0], max_min_health_care_index[1][1])))
+        max_min_health_care_index[0][0], *max_min_health_care_index[0][1], max_min_health_care_index[1][0], max_min_health_care_index[1][1])))
     or your_health_care_index
 )
 
