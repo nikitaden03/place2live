@@ -9,7 +9,7 @@ def max_min_index(name_of_index, name):
     max_value = df[name_of_index].max()
     max_country = list(df[name == max_value]['country'])
     min_value = df[name_of_index].min()
-    min_country = list(df[name == min_value]['country'])
+    min_country = list(df[name == min_valuea]['country'])
     return (max_value, max_country), (min_value, min_country)
 
 
@@ -183,11 +183,14 @@ out_df = df[df.purchasing_power_index > your_purchasing_power_index][
 ][
     df.climate_index > your_climate_index
 ]
-print_out_df = out_df[["country", "freedomhouse_score",
-                       "quality_of_life_index"]]
+
+print_out_df = out_df[
+    ["country", "freedomhouse_score", "quality_of_life_index"]
+].dropna().sort_values(by=['freedomhouse_score'],
+                       ascending=False)
 
 if print_out_df.empty:
-    print(f"Don't exist country better any {your_country}.")
+    print(f"There is no country better than {your_country}.")
 else:
     with pd.option_context("display.max_rows", None, "display.max_columns",
                            None):
