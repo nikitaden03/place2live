@@ -32,5 +32,7 @@ def test_max_min_index(name_index, name):
     min_value = min(l)
     max_country = list(df[name == max_value]['country'])
     min_country = list(df[name == min_value]['country'])
-    assert max_min_index(name_index, name) == ((max_value, max_country),
-                                               (min_value, min_country))
+    b = max_min_index(name_index, name) == ((max_value, max_country),
+                                            (min_value, min_country))
+    if not b:
+        raise AssertionError()
