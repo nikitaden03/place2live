@@ -183,11 +183,14 @@ out_df = df[df.purchasing_power_index > your_purchasing_power_index][
 ][
     df.climate_index > your_climate_index
 ]
-print_out_df = out_df[["country", "freedomhouse_score",
-                       "quality_of_life_index"]]
+
+print_out_df = out_df[
+    ["country", "freedomhouse_score", "quality_of_life_index"]
+].dropna().sort_values(by=['freedomhouse_score'],
+                       ascending=False)
 
 if print_out_df.empty:
-    print(f"Don't exist country better any {your_country}.")
+    print(f"There is no country better than {your_country}.")
 else:
     with pd.option_context("display.max_rows", None, "display.max_columns",
                            None):
