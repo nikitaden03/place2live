@@ -24,12 +24,12 @@ df = pd.read_csv("city/output/list_of_countries.csv")
     ('pollution_index', df.pollution_index),
 ])
 def test_max_min_index(name_index, name):
-    l = []
+    list_of_value = []
     for i in df[name_index]:
         if i != 'nan':
-            l.append(i)
-    max_value = max(l)
-    min_value = min(l)
+            list_of_value.append(i)
+    max_value = max(list_of_value)
+    min_value = min(list_of_value)
     max_country = list(df[name == max_value]['country'])
     min_country = list(df[name == min_value]['country'])
     b = max_min_index(name_index, name) == ((max_value, max_country),

@@ -9,7 +9,7 @@ def max_min_index(name_of_index, name):
     max_value = df[name_of_index].max()
     max_country = list(df[name == max_value]['country'])
     min_value = df[name_of_index].min()
-    min_country = list(df[name == min_valuea]['country'])
+    min_country = list(df[name == min_value]['country'])
     return (max_value, max_country), (min_value, min_country)
 
 
