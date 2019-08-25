@@ -21,7 +21,7 @@ def run_country_checker():
 YOUR_COUNTRY = run_country_checker()
 
 
-def max_min_index(name_index, df):
+def max_min_index(name_index):
     """Return maximum and minimum value with country of a column from df."""
     country_and_name = df[['country', name_index]]
     counrties_in_name_index = country_and_name.sort_values(name_index).dropna()
@@ -255,14 +255,14 @@ values = {
 df = df.fillna(value=values)
 
 if __name__ == "__main__":
-    max_min_purchasing = max_min_index('purchasing_power_index', df)
-    max_min_safety = max_min_index('safety_index', df)
-    max_min_health = max_min_index('health_care_index', df)
-    max_min_cost = max_min_index('cost_of_living_index', df)
-    max_min_property = max_min_index('property_price_to_income_ratio', df)
-    max_min_traffic = max_min_index('traffic_commute_time_index', df)
-    max_min_pollution = max_min_index('pollution_index', df)
-    max_min_climate = max_min_index('climate_index', df)
+    max_min_purchasing = max_min_index('purchasing_power_index')
+    max_min_safety = max_min_index('safety_index')
+    max_min_health = max_min_index('health_care_index')
+    max_min_cost = max_min_index('cost_of_living_index')
+    max_min_property = max_min_index('property_price_to_income_ratio')
+    max_min_traffic = max_min_index('traffic_commute_time_index')
+    max_min_pollution = max_min_index('pollution_index')
+    max_min_climate = max_min_index('climate_index')
     your_purchasing_power_index = float(purchase_power_func())
     your_safety_index = float(safety_func())
     your_health_care_index = float(health_care_func())
