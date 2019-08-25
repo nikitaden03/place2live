@@ -19,7 +19,7 @@ df = pd.DataFrame(data={
 ])
 def test_max_min_index(name_index):
     """test the output of the max_min_index function."""
-    b = max_min_index(name_index, df) == ([
+    b = max_min_index(name_index) == ([
         df[name_index].max(), df['country'][df[name_index].idxmax()]
         ], [df[name_index].min(), df['country'][df[name_index].idxmin()]])
     if not b:
